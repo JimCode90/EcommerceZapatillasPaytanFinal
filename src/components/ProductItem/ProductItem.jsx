@@ -1,5 +1,4 @@
 import React from 'react';
-import imgDemo from '../../assets/img/product-image/img2.jpg'
 import {Link} from "react-router-dom";
 
 const ProductItem = ({products}) => {
