@@ -1,8 +1,7 @@
 import {Link} from "react-router-dom";
-import imgLogo from '../assets/img/logo.png'
 import CardWidget from "../components/CardWidget.jsx";
 
-const NavBar = () => {
+const NavBar = ({imgLogo}) => {
     return (
         <div>
             <div className="navbar-area">
@@ -25,14 +24,14 @@ const NavBar = () => {
                                         </Link>
                                         <ul className="dropdown-menu">
                                             <li className="nav-item">
-                                                <Link to="/">
+                                                <Link to="/productos">
                                                     Productos
                                                 </Link>
                                             </li>
                                         </ul>
                                     </li>
                                     <li className="nav-item p-relative">
-                                        <Link to="/" className="nav-link">
+                                        <Link to="/contacto" className="nav-link">
                                             Contacto
                                         </Link>
                                     </li>

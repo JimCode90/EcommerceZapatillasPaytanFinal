@@ -2,12 +2,15 @@ import {useEffect, useState} from "react";
 import ProductItem from "../ProductItem/ProductItem.jsx";
 import { db } from '../../firebase/Firebase.js'
 import { collection, query, limit, getDocs } from 'firebase/firestore';
+import {SyncOutlined} from "@ant-design/icons";
 
 const ProductLatestContainer = () => {
 
     const [products, setProducts] = useState([]);
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
+        setLoading(true)
         const q = query(collection(db, 'productos'), limit(8))
         getDocs(q)
             .then(result => {
@@ -19,6 +22,7 @@ const ProductLatestContainer = () => {
                     }
                 })
                 setProducts(lista)
+                setLoading(false)
             })
     }, []);
 
@@ -30,7 +34,10 @@ const ProductLatestContainer = () => {
                         <h2><span className="dot"></span> LO MAS VENDIDO</h2>
                     </div>
                     <div className="row">
-                        <ProductItem products={products} />
+                        {
+                            loading ? <SyncOutlined spin className="text-danger h1" />
+                                : <ProductItem products={products} />
+                        }
 
                     </div>
                 </div>
