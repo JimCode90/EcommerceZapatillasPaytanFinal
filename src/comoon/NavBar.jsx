@@ -12,7 +12,7 @@ const NavBar = () => {
                     <div className="container">
                         <nav className="navbar navbar-expand-md navbar-light">
                             <Link to="/">
-                                <h4 className="text-dark">Ecommerce Zapatillas</h4>
+                                <h4 className="text-dark">Ecommerce Shoes</h4>
                             </Link>
                             <div className="collapse navbar-collapse" id="navbarSupportedContent">
                                 <ul className="navbar-nav">

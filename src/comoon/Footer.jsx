@@ -15,7 +15,7 @@ const Footer = () => {
                         <div className="single-footer-widget">
                             <div className="logo">
                                 <Link to="/">
-                                    <h4 className="text-dark">Ecommerce Zapatillas</h4>
+                                    <h4 className="text-dark">Ecommerce Shoes</h4>
                                 </Link>
                             </div>
 
@@ -54,7 +54,7 @@ const Footer = () => {
                 <div className="container">
                     <div className="row align-items-center">
                         <div className="col-lg-6 col-md-6">
-                            <p>Copyright &copy; 2022 Ecommerce</p>
+                            <p>Copyright &copy; 2022 Ecommerce Shoes</p>
                         </div>
                         <div className="col-lg-6 col-md-6">
                             <ul className="payment-card">
