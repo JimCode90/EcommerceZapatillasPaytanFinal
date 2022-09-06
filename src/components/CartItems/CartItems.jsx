@@ -1,7 +1,7 @@
 import {Link} from "react-router-dom";
 
 
-function CartItems({cart}) {
+function CartItems({cart, removerProducto}) {
     return (
         <>
             <tbody>
@@ -28,7 +28,7 @@ function CartItems({cart}) {
                                 </td>
                                 <td className="product-subtotal">
                                     <span className="subtotal-amount">S/. {parseFloat(item.cantidad * item.precio).toFixed(2)}</span>
-                                    <a className="remove">
+                                    <a onClick={() => removerProducto(item.id)} className="remove">
                                         <i className="far fa-trash-alt"></i>
                                     </a>
                                 </td>

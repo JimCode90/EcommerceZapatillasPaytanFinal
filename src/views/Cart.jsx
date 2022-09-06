@@ -53,7 +53,7 @@ function Cart() {
                                                         <th scope="col">Total</th>
                                                     </tr>
                                                     </thead>
-                                                    <CartItems cart={cart}/>
+                                                    <CartItems cart={cart} removerProducto={removerProducto}/>
                                                 </table>
                                             </div>
                                             <div className="cart-buttons">
@@ -82,7 +82,7 @@ function Cart() {
                                                                             <li>Total <span><b>{parseFloat(cantPrecioTotal() + precioDelivery).toFixed(2)}</b></span>
                                                                             </li>
                                                                         </ul>
-                                                                        <Link to="/checkout" class="btn btn-light">
+                                                                        <Link to="/checkout" className="btn btn-light">
                                                                             Procesar compra
                                                                         </Link>
                                                                         <div className="continue-shopping-box mt-2">

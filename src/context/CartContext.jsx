@@ -1,10 +1,11 @@
 import {createContext, useContext, useState} from "react";
 import {useLocalStorage} from "../hooks/useLocalStorage.js";
+import {toast} from "react-toastify";
 
 export const CartContext = createContext();
 
 export const CartProvider = ({children}) => {
-    let precioDelivery = 10;
+    const [precioDelivery, setPrecioDelivery] = useState(10);
     const {
         item: cart,
         loading: loadingCarrito,
@@ -13,6 +14,16 @@ export const CartProvider = ({children}) => {
     } = useLocalStorage('CART_V1', []);
 
     const addToCart = (item) => {
+        toast.success('Producto agregado al carrito!', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        });
+
         if (isProductInCart(item.id)) {
             const actualizarCarrito = cart.map((product) => {
                 if (product.id === item.id) {
@@ -35,7 +46,18 @@ export const CartProvider = ({children}) => {
 
     const vaciarCarrito = () => saveCart([])
 
-    const removerProducto = (id) => saveCart(cart.filter((product) => product.id !== id))
+    const removerProducto = (id) => {
+        toast.success('Producto eliminado!', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        });
+        saveCart(cart.filter((product) => product.id !== id))
+    }
 
     const cantidadTotalProductosCarrito = () => cart.reduce((acumulador, product) => acumulador += product.cantidad, 0)
 
