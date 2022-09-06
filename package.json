@@ -1,13 +1,10 @@
 {
-  "homepage": "http://JimCode90.github.io/EcommerceZapatillasPaytanFinal",
   "name": "ecommerce_zapatillas_paytan",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "predeploy" : "npm run build",
-    "deploy": "gh-pages -d build",
     "build": "vite build",
     "preview": "vite preview"
   },
